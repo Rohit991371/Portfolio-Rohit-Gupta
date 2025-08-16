@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Gupta - Computer Science Engineer</title>
+    <meta name="description" content="Portfolio of Rohit Gupta, final-year CSE student passionate about AI, ML, and building intelligent systems that solve real-world problems.">
+    <meta property="og:title" content="Rohit Gupta - AI Engineer Portfolio">
+    <meta property="og:description" content="Aspiring AI Engineer specializing in Machine Learning, Deep Learning, and AI-based solutions">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    
+    
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Rohit Gupta</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">Rohit Gupta</span> — Computer Science Engineer</h1>
+                <p>Final-year CSE student passionate about AI, ML, and building intelligent systems that solve real-world problems.</p>
+                <div class="hero-buttons">
+                    <a href="./assets/Rohit Gupta.pdf" target="_blank" class="btn btn-primary" onclick="downloadResume()">
+                        <i class="fas fa-download"></i>
+                        Download Resume
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+            <!-- <div class="hero-image">
+                Placeholder for profile image - replace with actual image -->
+                <!-- <div style="width: 350px; height: 350px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue)); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; box-shadow: var(--shadow);">
+                    <i class="fas fa-user"></i>
+                </div> -->
+                <div class="hero-image">
+                <img src="assets/Rohit3.jpg" alt="Rohit Gupta - Computer Science Engineer" class="profile-img">
+            </div>
+            </div>
+
+            <!-- <div class="hero-image">
+                <img src="assets\Rohit Gupta.jpg" alt="Rohit Gupta" 
+                    style="width: 350px; height: 350px; border-radius: 50%; object-fit: cover; 
+                box-shadow: var(--shadow);">
+            </div> -->
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm Rohit Gupta, a final-year CSE student with a strong interest in Machine Learning, Deep Learning, and building AI-powered applications. I've worked on diverse projects including stock prediction using hybrid models (LSTM + XGBoost), COVID image classification with Xception + Attention Head, Conversational RAG-based university bot, and OCR solutions for edible product ingredients.</p>
+                    <p>I also have hands-on experience in NLP and Generative AI. My passion lies in creating intelligent systems that can solve complex real-world problems and make a meaningful impact on society.</p>
+                </div>
+                <div class="interests">
+                    <h3>My Interests</h3>
+                    <ul>
+                        <li>AI & Deep Learning</li>
+                        <li>Generative AI Agents</li>
+                        <li>Natural Language Processing</li>
+                        <li>Full-Stack AI Applications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>COVID Image Classification</h3>
+                    <p>Classified COVID vs. non-COVID X-rays with improved accuracy using attention mechanisms. Implemented Xception architecture with custom attention heads for enhanced feature extraction.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Xception</span>
+                        <span class="tech-tag">Attention Mechanism</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Rohit991371/Lungs-CT-scans-Classification" target="_blank" ><i class="fab fa-github"></i> GitHub</a>
+                        <!-- <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a> -->
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Exploring And analyzing Tech Stock performance: A data visualization approach</h3>
+                    <p>Implemented models like LSTM and ARIMA for stock prediction and used matplotlib and plotly for data visualization.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">LSTM</span>
+                        <span class="tech-tag">ARIMA</span>
+                        <span class="tech-tag">Patplotlib</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Numpy</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Rohit991371/Stock-Visualisation" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <!-- <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a> -->
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>ChatPDF Bot</h3>
+                    <p>Developed a bot for querying PDF using LangChain, Groq LLM, and persistent vector databases. Implemented efficient retrieval and generation pipeline.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">Groq LLM</span>
+                        <span class="tech-tag">Vector DB</span>
+                        <span class="tech-tag">Streamlit</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Rohit991371/Conversational-RAG-" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <!-- <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a> -->
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Neural Network for Particle Physics (2HDM)</h3>
+                        <p>Created 25 large-scale datasets (500,000 rows each) capturing constrained parameter variations in the Two-Higgs-Doublet Model (2HDM). Developed a hybrid model integrating neural networks with XGBoost to effectively refine and constrain 2HDM parameters.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Hybrid Neural Networks</span>
+                        <span class="tech-tag">Data Visualization</span>
+                        <span class="tech-tag">Data Preprocessing</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Rohit991371/Two-Higgs-Doublet-Model/blob/main/2_hdm_final.ipynb" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <!-- <a href="#"><i class="fas fa-file-pdf"></i> Paper</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Experience Section -->
+<section class="section experience" id="experience">
+    <div class="container">
+        <h2 class="section-title">Experience</h2>
+
+        <div class="experience-item">
+            <h3>Summer Research Intern</h3>
+            <div class="role">IIT Gandhinagar – Particle Physics & Machine Learning</div>
+            <p>Created 25 large datasets (500,000 rows each) representing constrained parameter variations in the Two-Higgs-Doublet Model (2HDM). Performed data balancing and advanced feature engineering on initially imbalanced datasets. Built and trained a neural network architecture with regularization and dropout, achieving a 15% improvement in accuracy over traditional methods. Prepared comprehensive reports and visualizations to present findings to research collaborators.</p>
+        </div>
+
+        <div class="experience-item">
+            <h3>Agile Virtual Experience Program</h3>
+            <div class="role">JPMorgan Chase & Co.</div>
+            <p>Gained practical experience in agile methodologies, teamwork enhancement, and communication skill refinement through JPMorgan Chase & Co.'s Agile Virtual Experience Program.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Certificates Section -->
+    <section class="section certificates" id="certificates">
+        <div class="container">
+            <h2 class="section-title">Certifications & Achievements</h2>
+            <div class="certificates-grid">
+
+                <div class="certificate-card">
+                    <div class="certificate-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python & SQL</h3>
+                    <p class="certificate-issuer">Edureka</p>
+                    <p class="certificate-description">Covered python topics and SQL necessary for Machine Learning and Data Science</p>
+                    <div class="certificate-date">Issued: August 2023</div>
+                    <div class="certificate-links">
+                        <a href="./assets/Module1_python-SQL.pdf" class="certificate-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                        <!-- <a href="./assets/Module1_python-SQL.pdf" class="certificate-link verify" target="_blank">
+                            <i class="fas fa-check-circle"></i> Verify
+                        </a> -->
+                    </div>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Machine Learning Specialty</h3>
+                    <p class="certificate-issuer">Edureka</p>
+                    <p class="certificate-description">Specialized certification in building and training ML models.</p>
+                    <div class="certificate-date">Issued: August 2023</div>
+                    <div class="certificate-links">
+                        <a href="./assets/Module2_Machine Learning.pdf" class="certificate-link">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                        <!-- <a href="./assets/Module2_Machine Learning.pdf" class="certificate-link verify">
+                            <i class="fas fa-check-circle"></i> Verify
+                        </a> -->
+                    </div>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Deep Learning</h3>
+                    <p class="certificate-issuer">Edureka</p>
+                    <p class="certificate-description">Advanced deep learning concepts including CNNs, RNNs, LSTM, and transformer architectures for real-world applications.</p>
+                    <div class="certificate-date">Issued: August 2023</div>
+                    <div class="certificate-links">
+                        <a href="./assets/Module3_Deep Learning.pdf" class="certificate-link">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                        <!-- <a href="./assets/Module3_Deep Learning.pdf" class="certificate-link verify">
+                            <i class="fas fa-check-circle"></i> Verify
+                        </a> -->
+                    </div>
+                </div>
+
+
+                <div class="certificate-card">
+                    <div class="certificate-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data Science and Machine Learning Internship</h3>
+                    <p class="certificate-issuer">Edureka</p>
+                    <p class="certificate-description">Comprehensive course covering supervised learning, unsupervised learning, and neural networks with practical implementations.</p>
+                    <div class="certificate-date">Issued: August 2023</div>
+                    <div class="certificate-links">
+                        <a href="./assets/DS and ML Completion.pdf" class="certificate-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                        <!-- <a href="./assets/DS and ML Completion.pdf" class="certificate-link verify" target="_blank">
+                            <i class="fas fa-check-circle"></i> Verify
+                        </a> -->
+                    </div>
+                </div>
+
+
+                <div class="certificate-card">
+                    <div class="certificate-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Summer Research Internship</h3>
+                    <p class="certificate-issuer">IIT Gandhinagar</p>
+                    <p class="certificate-description">Completed Summer Research Internship where I worked on Hybrid Machine Learning Model</p>
+                    <div class="certificate-date">Issued: July 2024</div>
+                    <div class="certificate-links">
+                        <a href="./assets/SRIP_126.pdf" class="certificate-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                        <!-- <a href="#" class="certificate-link verify">
+                            <i class="fas fa-check-circle"></i> Verify
+                        </a> -->
+                    </div>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Agile Virtual Experience Program</h3>
+                    <p class="certificate-issuer">Forage</p>
+                    <p class="certificate-description">Over the period of time, I'd completed practical task based on agile and scrum at JPMC.</p>
+                    <div class="certificate-date">Issued: July 2023</div>
+                    <div class="certificate-links">
+                        <a href="./assets/Agile Virtual Experience Program.pdf" class="certificate-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                        <!-- <a href="#" class="certificate-link verify">
+                            <i class="fas fa-check-circle"></i> Verify
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+
+<!-- Skills Section -->
+<section class="section skills" id="skills">
+    <div class="container">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="skills-grid">
+
+            <div class="skill-category">
+                <h3><i class="fas fa-code"></i> Languages</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">C</span>
+                    <span class="skill-item">C++</span>
+                    <span class="skill-item">SQL</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-laptop-code"></i> CS Core</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Data Structures & Algorithms (DSA)</span>
+                    <span class="skill-item">Object-Oriented Programming (OOPs)</span>
+                    <span class="skill-item">DBMS</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-brain"></i> AI/ML</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Classification</span>
+                    <span class="skill-item">Regression</span>
+                    <span class="skill-item">NLP</span>
+                    <span class="skill-item">RAG</span>
+                    <span class="skill-item">LLMs</span>
+                    <span class="skill-item">Prompt Engineering Fundamentals</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-cubes"></i> Tools & Libraries</h3>
+                <div class="skill-list">
+                    <span class="skill-item">TensorFlow</span>
+                    <span class="skill-item">Keras</span>
+                    <span class="skill-item">Scikit-learn</span>
+                    <span class="skill-item">XGBoost</span>
+                    <span class="skill-item">LangChain</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-globe"></i> Web Development</h3>
+                <div class="skill-list">
+                    <span class="skill-item">HTML</span>
+                    <span class="skill-item">CSS</span>
+                    <span class="skill-item">JavaScript</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-chart-bar"></i> Visualization</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Matplotlib</span>
+                    <span class="skill-item">Seaborn</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-code-branch"></i> Version Control</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Git</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-user-check"></i> Soft Skills</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Problem Solving</span>
+                    <span class="skill-item">Team Player</span>
+                    <span class="skill-item">Fast Learner</span>
+                    <span class="skill-item">Effective Communication</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Let's Connect!</h3>
+                    <p>I'm always excited to discuss AI, machine learning, and potential collaboration opportunities. Feel free to reach out!</p>
+                    <div class="social-links">
+                        <a href="https://github.com/Rohit991371" target="_blank" class="social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/rohitgupta1604/" target="_blank" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:rohit.gupta1604004@gmail.com" class="social-link" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://x.com/RohitGu97434862" target="_blank" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">&#8593</button>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Rohit Gupta. All rights reserved. Built with passion for AI and innovation.</p>
+        </div>
+    </footer>
+
+    
+    <script src="script.js"></script>
+    <script>
+        (function(){
+            emailjs.init('w8qe42-ktNFhTr5tT');
+        })();   
+    </script>
+
+</body>
+</html>
