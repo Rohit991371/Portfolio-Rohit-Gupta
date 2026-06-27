@@ -1,13 +1,4 @@
-/**
- * Rohit Gupta Portfolio — script.js
- * Vanilla JS only. No frameworks.
- *
- * BUG FIX: The original code had two separate window.addEventListener("load", ...)
- * blocks. The second one appended a loader div AFTER the page was already rendered,
- * causing a white flash on load then a re-render when it was removed. Fixed by:
- *  1. Removing the loader entirely (not needed — page loads fast as static HTML).
- *  2. Consolidating all load-time init into a single DOMContentLoaded listener.
- */
+
 
 /* ─── Navbar scroll ─────────────────────────────────────────────────────────── */
 let ticking = false;

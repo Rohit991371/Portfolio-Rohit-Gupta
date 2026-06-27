@@ -1345,3 +1345,39 @@ body {
     height: 140px;
   }
 }
+
+/* Project bullet lists */
+.project-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.project-bullets li {
+  color: var(--text-gray);
+  line-height: 1.7;
+  padding: 0.25rem 0 0.25rem 1.4rem;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.project-bullets li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--primary-blue);
+  font-size: 0.85rem;
+  top: 0.35rem;
+}
+
+.inline-link {
+  color: var(--primary-blue);
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.inline-link:hover {
+  color: var(--dark-blue);
+  text-decoration: underline;
+}

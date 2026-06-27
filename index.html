@@ -100,18 +100,23 @@
             </div>
         </div>
     </section>
-
+    
     <!-- Projects Section -->
     <section class="section projects" id="projects">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
-
+ 
                 <!-- 1. InsightFlow AI (Featured) -->
                 <div class="project-card project-featured">
                     <div class="project-badge">Featured</div>
                     <h3>InsightFlow AI</h3>
-                    <p>Autonomous multi-agent data analytics platform. Upload a CSV or Excel file and nine specialized agents handle everything — data cleaning, statistical analysis, visualization, chart explanation, business translation, and a downloadable PDF report. Two interactive agents (natural language chart generation + sandboxed pandas query execution) let users ask questions directly against their data. LLM-generated pandas expressions are AST-validated before execution — allowlisted variables, blocked dangerous attributes, 5-second timeout. Every LLM step has a deterministic fallback so the platform runs end-to-end without an API key.</p>
+                    <ul class="project-bullets">
+                        <li>Autonomous multi-agent data analytics platform — upload a CSV or Excel file and 9 specialized agents handle the rest: data cleaning, statistical analysis, visualization, chart explanation, business translation, and a downloadable PDF report.</li>
+                        <li>Two interactive agents run from the UI: natural language chart generation and a sandboxed pandas query agent that executes real queries against the data (not guessing).</li>
+                        <li>LLM-generated pandas expressions are AST-validated before execution — allowlisted variables, blocked dangerous attributes, 5-second timeout, tested against real exploit payloads.</li>
+                        <li>Every LLM step has a deterministic fallback so the platform runs end-to-end with no API key. 3,451 lines, 48 tests.</li>
+                    </ul>
                     <div class="tech-stack">
                         <span class="tech-tag">LangGraph</span>
                         <span class="tech-tag">LangChain</span>
@@ -126,15 +131,18 @@
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/Rohit991371" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://insightflow-ai-gvrdyhnn2vpt8pufea2waa.streamlit.app/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i>
-                             Streamlit</a>
+                        <a href="https://insightflow-ai-gvrdyhnn2vpt8pufea2waa.streamlit.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
-
+ 
                 <!-- 2. Personalized AI Assistant -->
                 <div class="project-card">
                     <h3>Personalized AI Assistant</h3>
-                    <p>A context-aware <strong>Personalized AI Assistant</strong> built using a Retrieval-Augmented Generation (RAG) pipeline to serve as a digital representation of me. It intelligently answers questions about my skills, experience, projects, and background by retrieving information from a persistent knowledge base. Supports multi-source document ingestion, semantic search with <strong>FAISS</strong>, and <strong>LangChain</strong>-powered orchestration, making the assistant data-driven, extensible, and capable of delivering accurate, grounded responses.</p>
+                    <ul class="project-bullets">
+                        <li>Context-aware AI assistant built on a RAG pipeline to serve as a digital representation — answers questions about skills, experience, and projects by retrieving from a persistent knowledge base.</li>
+                        <li>Supports multi-source document ingestion with semantic search powered by FAISS and LangChain orchestration.</li>
+                        <li>Delivers accurate, grounded responses — data-driven and extensible, not hallucinated.</li>
+                    </ul>
                     <div class="tech-stack">
                         <span class="tech-tag">RAG</span>
                         <span class="tech-tag">FAISS</span>
@@ -146,16 +154,19 @@
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/Rohit991371/Personalized-Agent" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://rohit991371-personalized-agent-app-5sqmdf.streamlit.app/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i>
-                             Streamlit</a>
+                        <a href="https://rohit991371-personalized-agent-app-5sqmdf.streamlit.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
-
+ 
                 <!-- 3. COVID Image Classification -->
                 <div class="project-card">
                     <div class="project-badge project-badge-ieee">IEEE Published</div>
                     <h3>COVID Image Classification</h3>
-                    <p>Classified COVID vs. non-COVID chest X-rays at <strong>97.86% accuracy</strong> using Xception with custom attention mechanisms. The attention head improved feature localization on infected regions, outperforming baseline transfer learning by a significant margin. Research published in IEEE.</p>
+                    <ul class="project-bullets">
+                        <li>Classified COVID vs. non-COVID chest X-rays at <strong>97.86% accuracy</strong> using Xception with custom attention mechanisms.</li>
+                        <li>Attention head improved feature localization on infected regions, outperforming baseline transfer learning by a significant margin.</li>
+                        <li>Research published in IEEE — <a href="https://ieeexplore.ieee.org/document/11233861" target="_blank" class="inline-link">view paper</a>.</li>
+                    </ul>
                     <div class="tech-stack">
                         <span class="tech-tag">Xception</span>
                         <span class="tech-tag">Attention Mechanism</span>
@@ -167,15 +178,18 @@
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/Rohit991371/Lungs-CT-scans-Classification" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://ieeexplore.ieee.org/document/11233861" target="_blank"><i class="fa fa-link" aria-hidden="true"></i>
-                            IEEE</a>
+                        <a href="https://ieeexplore.ieee.org/document/11233861" target="_blank"><i class="fas fa-file-alt"></i> IEEE Paper</a>
                     </div>
                 </div>
-
+ 
                 <!-- 4. Two Higgs Doublet Model -->
                 <div class="project-card">
                     <h3>Two Higgs Doublet Model Research</h3>
-                    <p>Scientific ML research at IIT Gandhinagar. Generated 25 large-scale datasets (500K rows each) representing constrained parameter variations in the Two-Higgs-Doublet Model. Built a hybrid neural network + XGBoost architecture with regularization and dropout to constrain 2HDM parameters — achieving 15% improvement over traditional methods. Produced comprehensive visualizations for high-dimensional parameter spaces.</p>
+                    <ul class="project-bullets">
+                        <li>Scientific ML research at IIT Gandhinagar — generated 25 large-scale datasets (500K rows each) capturing constrained parameter variations in the Two-Higgs-Doublet Model (2HDM).</li>
+                        <li>Built a hybrid neural network + XGBoost architecture with regularization and dropout, achieving 15% accuracy improvement over traditional methods.</li>
+                        <li>Applied advanced feature engineering on imbalanced datasets; produced research visualizations for high-dimensional parameter spaces.</li>
+                    </ul>
                     <div class="tech-stack">
                         <span class="tech-tag">IIT Gandhinagar</span>
                         <span class="tech-tag">Deep Learning</span>
@@ -190,7 +204,7 @@
                         <a href="https://github.com/Rohit991371/Two-Higgs-Doublet-Model/blob/main/2_hdm_final.ipynb" target="_blank"><i class="fab fa-github"></i> GitHub</a>
                     </div>
                 </div>
-
+ 
             </div>
         </div>
     </section>
@@ -492,15 +506,15 @@
         </div>
     </section>
 
-    <button onclick="topFunction()" id="myBtn" title="Back to top" aria-label="Back to top">&#8593;</button>
-
+    
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Rohit Gupta. Built with passion for AI and innovation.</p>
         </div>
     </footer>
-
+    
+    <button onclick="topFunction()" id="myBtn" title="Back to top" aria-label="Back to top">&#8593;</button>
     <script src="script.js"></script>
     <script>
         (function(){
