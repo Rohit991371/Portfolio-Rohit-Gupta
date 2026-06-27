@@ -1,52 +1,20 @@
-# 🌐 Portfolio - Rohit Gupta
+# Rohit Gupta — Portfolio
 
-This is my personal portfolio website built with **HTML, CSS, and JavaScript**.  
-It showcases my projects, skills, and experiences as a Computer Science and Engineering student passionate about **Machine Learning, Deep Learning, and AI-driven applications**.
+Personal portfolio website built with pure HTML, CSS, and Vanilla JavaScript. No frameworks, no build tools — fully static and deployable anywhere.
 
----
-
-## 🚀 Features
-- Clean and responsive design
-- Interactive navigation with JavaScript
-- Sections for:
-  - 👨‍💻 About Me
-  - 📂 Projects
-  - 🛠️ Skills
-  - 📬 Contact
-- Asset folder containing images, icons, and other resources
+**Live:** [rohit991371.github.io/Portfolio-Rohit-Gupta](https://www.rohitgupta1604.com.np/)
 
 ---
 
-Portfolio/
-│── index.html      # Main HTML file
-│── style.css       # Stylesheet
-│── script.js       # JavaScript for interactivity
-│── assets/         # Images, icons, and other assets
+## About
+
+This portfolio showcases my work as an AI/ML and Data Analytics Engineer — including multi-agent AI systems, RAG pipelines, scientific ML research, and end-to-end analytics. It also pulls my latest Medium articles automatically via RSS so the blog section stays current without any manual updates.
 
 ---
 
-## 🛠️ Technologies Used
-- **HTML5**
-- **CSS3**
-- **JavaScript (Vanilla)**
+## Contact
 
----
-
-## 📌 Deployment
-The portfolio is hosted using **GitHub Pages**.  
-You can view it live here:  
-👉 [My Portfolio](https://rohit991371.github.io/Portfolio-Rohit-Gupta/)
-
----
-
-## 📬 Contact
-Feel free to connect with me:  
-
-- 📧 Email: [rohit.gupta160400@gmail.com](mailto:rohit.gupta160400@gmail.com)  
-- 💼 LinkedIn: [linkedin.com/in/rohitgupta](https://www.linkedin.com/in/rohitgupta1604/)  
-- 🐙 GitHub: [github.com/Rohit991371](https://github.com/Rohit991371)  
-
----
-
-⭐ If you like this project, consider giving it a **star** on GitHub!
-
+- **Email:** rohit.gupta1604004@gmail.com
+- **LinkedIn:** [linkedin.com/in/rohitgupta1604](https://www.linkedin.com/in/rohitgupta1604/)
+- **GitHub:** [github.com/Rohit991371](https://github.com/Rohit991371)
+- **Medium:** [medium.com/@rohit.gupta1604004](https://medium.com/@rohit.gupta1604004)
