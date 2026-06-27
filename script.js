@@ -1,456 +1,343 @@
-// Navbar scroll effect with better performance
+
+
+/* ─── Navbar scroll ─────────────────────────────────────────────────────────── */
 let ticking = false;
 
 function updateNavbar() {
-  const navbar = document.getElementById("navbar");
+  const navbar = document.getElementById('navbar');
   if (window.scrollY > 100) {
-    navbar.classList.add("scrolled");
+    navbar.classList.add('scrolled');
   } else {
-    navbar.classList.remove("scrolled");
+    navbar.classList.remove('scrolled');
   }
   ticking = false;
 }
 
-window.addEventListener("scroll", function () {
+window.addEventListener('scroll', function () {
   if (!ticking) {
     requestAnimationFrame(updateNavbar);
     ticking = true;
   }
 });
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
+/* ─── Scroll-to-top button ───────────────────────────────────────────────────── */
+const mybutton = document.getElementById('myBtn');
+
+window.addEventListener('scroll', function () {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    mybutton.style.display = 'block';
+  } else {
+    mybutton.style.display = 'none';
+  }
+}, { passive: true });
+
+function topFunction() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ─── Smooth scroll for anchor links ────────────────────────────────────────── */
+document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+  anchor.addEventListener('click', function (e) {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
+    const target = document.querySelector(this.getAttribute('href'));
     if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
 });
 
-// Contact form handling
-// document.getElementById("contactForm").addEventListener("submit", function (e) {
-//   e.preventDefault();
-
-//   // Get form data
-//   const formData = new FormData(this);
-//   const name = formData.get("name");
-//   const email = formData.get("email");
-//   const message = formData.get("message");
-
-//   // Simple validation
-//   if (!name || !email || !message) {
-//     alert("Please fill in all fields.");
-//     return;
-//   }
-
-//   // Here you would typically send the data to a server
-//   // For demo purposes, we'll just show a success message
-//   alert("Thank you for your message! I'll get back to you soon.");
-//   this.reset();
-// });
-
-  document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    emailjs.sendForm('service_j8q1nhk', 'template_nvlnj1t', this)
-      .then(function(response) {
-        console.log('Email sent!', response.status, response.text);
-        alert('Email sent successfully!');
-      }, function(error) {
-        console.error('Error sending email:', error);
-        alert('Oops! Something went wrong.');
-      });
-      this.reset();
-  });
-
-
-// Resume download function
+/* ─── Resume download ────────────────────────────────────────────────────────── */
 function downloadResume() {
-  const link = document.createElement("a");
-  // link.href = 'Rohit Gupta.pdf';
-  link.href = "./assets/Rohit Gupta.pdf";
-  link.download = "Rohit Gupta.pdf";
+  const link = document.createElement('a');
+  link.href = './assets/Rohit Gupta.pdf';
+  link.download = 'Rohit_Gupta_Resume.pdf';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
 }
 
-// Optimized Intersection Observer with better performance
+/* ─── Intersection Observer — scroll animations ──────────────────────────────── */
 const observerOptions = {
   threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
+  rootMargin: '0px 0px -50px 0px',
 };
 
 const observer = new IntersectionObserver(function (entries) {
-  entries.forEach((entry) => {
+  entries.forEach(function (entry) {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = "1";
-      entry.target.style.transform = "translateY(0)";
-      observer.unobserve(entry.target); // Stop observing once animated
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      observer.unobserve(entry.target);
     }
   });
 }, observerOptions);
 
-// Observe elements for animation with initial hidden state
-document
-  .querySelectorAll(".project-card, .experience-item, .skill-category")
-  .forEach((el) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
-    el.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
+function initScrollAnimations() {
+  document.querySelectorAll(
+    '.project-card, .experience-item, .skill-category, .certificate-card, .blog-card'
+  ).forEach(function (el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
     observer.observe(el);
   });
+}
 
-// Enhanced mobile menu functionality
-const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-const navLinks = document.querySelector(".nav-links");
+/* ─── Mobile menu ────────────────────────────────────────────────────────────── */
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navLinks = document.querySelector('.nav-links');
 let mobileMenuOpen = false;
 
-mobileMenuBtn.addEventListener("click", function () {
+mobileMenuBtn.addEventListener('click', function () {
   mobileMenuOpen = !mobileMenuOpen;
-
   if (mobileMenuOpen) {
-    navLinks.classList.add("mobile", "active");
+    navLinks.classList.add('mobile', 'active');
     this.innerHTML = '<i class="fas fa-times"></i>';
-    document.body.style.overflow = "hidden"; // Prevent background scroll
+    document.body.style.overflow = 'hidden';
   } else {
-    navLinks.classList.remove("mobile", "active");
+    navLinks.classList.remove('mobile', 'active');
     this.innerHTML = '<i class="fas fa-bars"></i>';
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = '';
   }
 });
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll(".nav-links a").forEach((link) => {
-  link.addEventListener("click", function () {
+document.querySelectorAll('.nav-links a').forEach(function (link) {
+  link.addEventListener('click', function () {
     if (window.innerWidth <= 768) {
-      navLinks.classList.remove("mobile", "active");
+      navLinks.classList.remove('mobile', 'active');
       mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = '';
       mobileMenuOpen = false;
     }
   });
 });
 
-// Close mobile menu when clicking outside
-document.addEventListener("click", function (e) {
-  if (
-    mobileMenuOpen &&
-    !navLinks.contains(e.target) &&
-    !mobileMenuBtn.contains(e.target)
-  ) {
-    navLinks.classList.remove("mobile", "active");
+document.addEventListener('click', function (e) {
+  if (mobileMenuOpen && !navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+    navLinks.classList.remove('mobile', 'active');
     mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = '';
     mobileMenuOpen = false;
   }
 });
 
-// Handle window resize
-window.addEventListener("resize", function () {
+window.addEventListener('resize', function () {
   if (window.innerWidth > 768) {
-    navLinks.classList.remove("mobile", "active");
+    navLinks.classList.remove('mobile', 'active');
     mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = '';
     mobileMenuOpen = false;
   }
 });
 
-// Typing effect for hero title (optional enhancement)
-function typeWriter(element, text, speed = 100) {
-  let i = 0;
-  element.innerHTML = "";
-
-  function type() {
-    if (i < text.length) {
-      element.innerHTML += text.charAt(i);
-      i++;
-      setTimeout(type, speed);
-    }
-  }
-
-  type();
-}
-
-// Optimized particle creation with mobile detection
+/* ─── Particles (hero background) ───────────────────────────────────────────── */
 function createParticles() {
-  // Reduce particles on mobile for better performance
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
   const isMobile = window.innerWidth <= 768;
-  const particleCount = isMobile ? 5 : 20;
+  const particleCount = isMobile ? 5 : 18;
 
-  const hero = document.querySelector(".hero");
-  const particlesContainer = document.createElement("div");
-  particlesContainer.style.cssText = `
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                pointer-events: none;
-                z-index: 0;
-                will-change: transform;
-            `;
+  const container = document.createElement('div');
+  container.style.cssText =
+    'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;';
 
   for (let i = 0; i < particleCount; i++) {
-    const particle = document.createElement("div");
-    particle.style.cssText = `
-                    position: absolute;
-                    width: 2px;
-                    height: 2px;
-                    background: rgba(37, 99, 235, 0.2);
-                    border-radius: 50%;
-                    animation: float ${Math.random() * 6 + 4}s infinite linear;
-                    left: ${Math.random() * 100}%;
-                    top: ${Math.random() * 100}%;
-                    will-change: transform;
-                `;
-    particlesContainer.appendChild(particle);
+    const p = document.createElement('div');
+    p.style.cssText =
+      'position:absolute;width:2px;height:2px;background:rgba(37,99,235,0.18);border-radius:50%;' +
+      'left:' + (Math.random() * 100) + '%;' +
+      'top:' + (Math.random() * 100) + '%;' +
+      'animation:particleFloat ' + (Math.random() * 6 + 4) + 's infinite linear;';
+    container.appendChild(p);
   }
-
-  hero.appendChild(particlesContainer);
+  hero.appendChild(container);
 }
 
-// Add smooth CSS transitions
-const style = document.createElement("style");
-style.textContent = `
-            @keyframes float {
-                0% {
-                    transform: translateY(0px) rotate(0deg);
-                    opacity: 1;
-                }
-                100% {
-                    transform: translateY(-200px) rotate(360deg);
-                    opacity: 0;
-                }
-            }
-            
-            /* Smooth scrolling performance improvements */
-            * {
-                transform: translateZ(0);
-                backface-visibility: hidden;
-                perspective: 1000;
-            }
-            
-            /* Optimize animations */
-            .hero-content,
-            .hero-image,
-            .project-card,
-            .experience-item,
-            .skill-category {
-                will-change: transform;
-            }
-        `;
-document.head.appendChild(style);
+/* ─── Medium RSS feed ────────────────────────────────────────────────────────── */
+/**
+ * Medium's RSS feed at https://medium.com/feed/@username is CORS-blocked for
+ * direct browser fetch. We use the rss2json.com API (free, no key needed) which
+ * proxies and converts the feed to JSON — works from a static site with no backend.
+ */
+const MEDIUM_USERNAME = 'rohit.gupta1604004';
+const RSS2JSON_URL =
+  'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@' +
+  MEDIUM_USERNAME +
+  '&count=6';
 
-// Initialize particles on load with delay for better performance
-window.addEventListener("load", function () {
-  setTimeout(() => {
-    createParticles();
-  }, 500);
-
-  // Initialize touch interactions for mobile
-  if ("ontouchstart" in window) {
-    initTouchInteractions();
-  }
-});
-
-// Optimize animations for different screen sizes
-function adjustAnimationsForDevice() {
-  const isMobile = window.innerWidth <= 768;
-  const isTablet = window.innerWidth <= 1024 && window.innerWidth > 768;
-
-  // Disable some animations on very small screens for better performance
-  if (window.innerWidth <= 480) {
-    document
-      .querySelectorAll(".hero-content h1, .hero-content p, .hero-buttons")
-      .forEach((el) => {
-        el.style.animation = "none";
-        el.style.opacity = "1";
-        el.style.transform = "none";
-      });
-  }
+function formatDate(dateStr) {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 }
 
-// Call on load and resize
-window.addEventListener("load", adjustAnimationsForDevice);
-window.addEventListener("resize", adjustAnimationsForDevice);
+function stripHtml(html) {
+  const div = document.createElement('div');
+  div.innerHTML = html;
+  return div.textContent || div.innerText || '';
+}
 
-// Remove problematic parallax effect that causes jerky scrolling
-// window.addEventListener('scroll', function() {
-//     const scrolled = window.pageYOffset;
-//     const parallax = document.querySelector('.hero');
-//     const speed = scrolled * 0.5;
-//
-//     if (parallax) {
-//         parallax.style.transform = `translateY(${speed}px)`;
-//     }
-// });
+function truncate(str, maxLen) {
+  const clean = stripHtml(str);
+  return clean.length > maxLen ? clean.substring(0, maxLen).trimEnd() + '…' : clean;
+}
 
-// Skills animation on scroll
-function animateSkills() {
-  const skills = document.querySelectorAll(".skill-item");
-  skills.forEach((skill, index) => {
-    setTimeout(() => {
-      skill.style.animation = "fadeInUp 0.5s ease-out forwards";
-    }, index * 100);
+function renderBlogCards(items) {
+  const grid = document.getElementById('blogGrid');
+  if (!items || items.length === 0) {
+    grid.innerHTML =
+      '<div class="blog-empty"><i class="fab fa-medium"></i>' +
+      '<p>No articles found. <a href="https://medium.com/@' +
+      MEDIUM_USERNAME +
+      '" target="_blank" style="color:var(--primary-blue)">Visit Medium</a> to read my latest posts.</p></div>';
+    return;
+  }
+
+  grid.innerHTML = items
+    .map(function (item) {
+      const imageHtml = item.thumbnail
+        ? '<div class="blog-card-image"><img src="' +
+          item.thumbnail +
+          '" alt="' +
+          item.title.replace(/"/g, '&quot;') +
+          '" loading="lazy" onerror="this.parentElement.innerHTML=\'<i class=\\\"fab fa-medium\\\"></i>\'"></div>'
+        : '<div class="blog-card-image"><i class="fab fa-medium"></i></div>';
+
+      const desc = truncate(item.description || item.content || '', 130);
+
+      return (
+        '<div class="blog-card">' +
+        imageHtml +
+        '<div class="blog-card-body">' +
+        '<div class="blog-card-date">' + formatDate(item.pubDate) + '</div>' +
+        '<div class="blog-card-title">' + item.title + '</div>' +
+        (desc ? '<div class="blog-card-desc">' + desc + '</div>' : '') +
+        '<a href="' + item.link + '" target="_blank" rel="noopener" class="blog-card-link">' +
+        'Read article <i class="fas fa-arrow-right"></i></a>' +
+        '</div></div>'
+      );
+    })
+    .join('');
+
+  // Re-observe blog cards for scroll animation
+  document.querySelectorAll('.blog-card').forEach(function (el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    observer.observe(el);
   });
 }
 
-// Trigger skills animation when skills section is visible
-const skillsSection = document.querySelector(".skills");
+function loadMediumFeed() {
+  fetch(RSS2JSON_URL)
+    .then(function (res) {
+      if (!res.ok) throw new Error('Network response not ok');
+      return res.json();
+    })
+    .then(function (data) {
+      if (data.status === 'ok' && data.items && data.items.length > 0) {
+        renderBlogCards(data.items);
+      } else {
+        renderBlogCards([]);
+      }
+    })
+    .catch(function () {
+      const grid = document.getElementById('blogGrid');
+      grid.innerHTML =
+        '<div class="blog-empty"><i class="fab fa-medium"></i>' +
+        '<p>Couldn\'t load articles right now. ' +
+        '<a href="https://medium.com/@' +
+        MEDIUM_USERNAME +
+        '" target="_blank" style="color:var(--primary-blue)">Read them on Medium</a>.</p></div>';
+    });
+}
+
+/* ─── Contact form ───────────────────────────────────────────────────────────── */
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+  const btn = this.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+
+  emailjs
+    .sendForm('service_j8q1nhk', 'template_nvlnj1t', this)
+    .then(
+      function () {
+        btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+        btn.style.background = '#059669';
+        document.getElementById('contactForm').reset();
+        setTimeout(function () {
+          btn.disabled = false;
+          btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+          btn.style.background = '';
+        }, 3000);
+      },
+      function () {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+        alert('Something went wrong. Please try emailing me directly at rohit.gupta1604004@gmail.com');
+      }
+    );
+});
+
+/* ─── Skills animation ───────────────────────────────────────────────────────── */
+const skillsSection = document.querySelector('.skills');
 const skillsObserver = new IntersectionObserver(
   function (entries) {
-    entries.forEach((entry) => {
+    entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        animateSkills();
+        document.querySelectorAll('.skill-item').forEach(function (skill, index) {
+          setTimeout(function () {
+            skill.style.animation = 'fadeInUp 0.4s ease-out forwards';
+          }, index * 60);
+        });
         skillsObserver.disconnect();
       }
     });
   },
-  { threshold: 0.5 }
+  { threshold: 0.3 }
 );
 
-if (skillsSection) {
-  skillsObserver.observe(skillsSection);
-}
+if (skillsSection) skillsObserver.observe(skillsSection);
 
-// Counter animation for stats (if you want to add stats)
-function animateCounter(element, target, duration = 2000) {
-  let start = 0;
-  const increment = target / (duration / 16);
-
-  function updateCounter() {
-    start += increment;
-    if (start < target) {
-      element.textContent = Math.floor(start);
-      requestAnimationFrame(updateCounter);
-    } else {
-      element.textContent = target;
-    }
-  }
-
-  updateCounter();
-}
-
-// Theme switcher (optional feature for dark/light mode)
-function initThemeSwitcher() {
-  const themeBtn = document.createElement("button");
-  themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
-  themeBtn.style.cssText = `
-                position: fixed;
-                top: 50%;
-                right: 20px;
-                transform: translateY(-50%);
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                border: none;
-                background: var(--primary-blue);
-                color: white;
-                cursor: pointer;
-                z-index: 1000;
-                transition: var(--transition);
-                box-shadow: var(--shadow);
-            `;
-
-  themeBtn.addEventListener("click", function () {
-    document.body.classList.toggle("dark-mode");
-    const icon = this.querySelector("i");
-    icon.className = document.body.classList.contains("dark-mode")
-      ? "fas fa-sun"
-      : "fas fa-moon";
-  });
-
-  document.body.appendChild(themeBtn);
-}
-
-// Initialize theme switcher
-// initThemeSwitcher();
-
-// Loading animation
-window.addEventListener("load", function () {
-  const loader = document.createElement("div");
-  loader.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: white;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 9999;
-                transition: opacity 0.5s ease-out;
-            `;
-
-  loader.innerHTML = `
-                <div style="text-align: center;">
-                    <div style="width: 50px; height: 50px; border: 3px solid #e5e7eb; border-top: 3px solid var(--primary-blue); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 20px;"></div>
-                    <p style="color: var(--primary-blue); font-weight: 600;">Loading...</p>
-                </div>
-            `;
-
-  // Add spin animation
-  const spinStyle = document.createElement("style");
-  spinStyle.textContent = `
-                @keyframes spin {
-                    0% { transform: rotate(0deg); }
-                    100% { transform: rotate(360deg); }
-                }
-            `;
-  document.head.appendChild(spinStyle);
-
-  document.body.appendChild(loader);
-
-  // Remove loader after a short delay
-  setTimeout(() => {
-    loader.style.opacity = "0";
-    setTimeout(() => {
-      loader.remove();
-    }, 500);
-  }, 1000);
-});
-
-// Get the button:
-let mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function () {
-  scrollFunction();
-};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
+/* ─── Adjust animations for tiny screens ─────────────────────────────────────── */
+function adjustAnimationsForDevice() {
+  if (window.innerWidth <= 480) {
+    document
+      .querySelectorAll('.hero-content h1, .hero-content p, .hero-buttons, .hero-eyebrow')
+      .forEach(function (el) {
+        el.style.animation = 'none';
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      });
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
+/* ─── Inject keyframes (particle float + spin) ───────────────────────────────── */
+(function injectKeyframes() {
+  const s = document.createElement('style');
+  s.textContent = [
+    '@keyframes particleFloat{0%{transform:translateY(0) rotate(0deg);opacity:1}100%{transform:translateY(-220px) rotate(360deg);opacity:0}}',
+    '@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}',
+  ].join('');
+  document.head.appendChild(s);
+})();
 
-// Initialize everything when DOM is loaded
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("Rohit Gupta Portfolio - Loaded Successfully!");
+/* ─── Init on DOM ready ──────────────────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', function () {
+  initScrollAnimations();
+  adjustAnimationsForDevice();
+  loadMediumFeed();
 
-  // Add any additional initialization code here
+  setTimeout(createParticles, 400);
 
-  // Example: Add a console message for developers
   console.log(
-    "%c🚀 Welcome to Rohit Gupta's Portfolio!",
-    "color: #2563EB; font-size: 16px; font-weight: bold;"
+    '%c🚀 Rohit Gupta — Portfolio',
+    'color:#2563EB;font-size:16px;font-weight:bold;'
   );
   console.log(
-    "%cInterested in the code? Check out the GitHub repository!",
-    "color: #6b7280; font-size: 12px;"
+    '%cGitHub: https://github.com/Rohit991371  |  LinkedIn: https://www.linkedin.com/in/rohitgupta1604/',
+    'color:#6b7280;font-size:12px;'
   );
 });
+
+window.addEventListener('resize', adjustAnimationsForDevice, { passive: true });

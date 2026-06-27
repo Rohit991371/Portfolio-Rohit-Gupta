@@ -1053,3 +1053,331 @@ body {
     height: 150px;
   }
 }
+
+/* =============================================
+   ADDITIONS & ENHANCEMENTS - Preserve base styles above
+   ============================================= */
+
+/* Hero eyebrow label */
+.hero-eyebrow {
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--primary-blue);
+  margin-bottom: 0.75rem;
+  opacity: 0;
+  animation: slideInLeft 0.8s 0.1s ease-out forwards;
+}
+
+/* Project Featured Badge */
+.project-featured {
+  border: 2px solid var(--primary-blue);
+  position: relative;
+}
+
+.project-badge {
+  display: inline-block;
+  background: var(--primary-blue);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.7rem;
+  border-radius: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-badge-ieee {
+  background: #059669;
+}
+
+/* Experience enhancements */
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.experience-date {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--primary-blue);
+  white-space: nowrap;
+  background: var(--light-blue);
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+
+.experience-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience-bullets li {
+  color: var(--text-gray);
+  line-height: 1.7;
+  padding: 0.3rem 0 0.3rem 1.5rem;
+  position: relative;
+  font-size: 1rem;
+}
+
+.experience-bullets li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--primary-blue);
+  font-size: 0.9rem;
+}
+
+/* Section subtitle */
+.section-subtitle {
+  text-align: center;
+  color: var(--text-gray);
+  font-size: 1.05rem;
+  margin-top: -1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.medium-link {
+  color: var(--primary-blue);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.medium-link:hover {
+  color: var(--dark-blue);
+  text-decoration: underline;
+}
+
+/* Blog Section */
+.blog {
+  background: var(--bg-light);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.blog-loading {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-gray);
+}
+
+.blog-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e5e7eb;
+  border-top: 3px solid var(--primary-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+.blog-card {
+  background: var(--white);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.2);
+}
+
+.blog-card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: linear-gradient(135deg, var(--light-blue), rgba(37, 99, 235, 0.15));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-blue);
+  font-size: 3rem;
+  flex-shrink: 0;
+}
+
+.blog-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-card-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card-date {
+  font-size: 0.8rem;
+  color: var(--text-gray);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.blog-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.blog-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.blog-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.blog-card-link:hover {
+  color: var(--dark-blue);
+  gap: 0.7rem;
+}
+
+.blog-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-gray);
+}
+
+.blog-empty i {
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.blog-cta {
+  text-align: center;
+}
+
+/* Contact detail item */
+.contact-details {
+  margin: 1.5rem 0;
+}
+
+.contact-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-gray);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.contact-detail-item:hover {
+  color: var(--primary-blue);
+}
+
+.contact-detail-item i {
+  color: var(--primary-blue);
+  width: 20px;
+}
+
+/* Skills section bg fix */
+.skills {
+  background: var(--bg-light);
+}
+
+/* Responsive additions */
+@media (max-width: 768px) {
+  .experience-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .experience-date {
+    align-self: flex-start;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-badge {
+    font-size: 0.7rem;
+  }
+  .blog-card-image {
+    height: 140px;
+  }
+}
+
+/* Project bullet lists */
+.project-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.project-bullets li {
+  color: var(--text-gray);
+  line-height: 1.7;
+  padding: 0.25rem 0 0.25rem 1.4rem;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.project-bullets li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--primary-blue);
+  font-size: 0.85rem;
+  top: 0.35rem;
+}
+
+.inline-link {
+  color: var(--primary-blue);
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.inline-link:hover {
+  color: var(--dark-blue);
+  text-decoration: underline;
+}
