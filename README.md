@@ -2,7 +2,7 @@
 
 Personal portfolio website built with pure HTML, CSS, and Vanilla JavaScript. No frameworks, no build tools — fully static and deployable anywhere.
 
-**Live:** [rohit991371.github.io/Portfolio-Rohit-Gupta](https://www.rohitgupta1604.com.np/)
+**Live:** [https://www.rohitgupta1604.com.np/](https://www.rohitgupta1604.com.np/)
 
 ---
 
